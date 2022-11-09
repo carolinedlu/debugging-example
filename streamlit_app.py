@@ -2,7 +2,7 @@ import streamlit as st
 import tensorflow
 import tensorflow_hub as hub
 
-@st.cache
+@st.experimental_singleton
 def get_model():
   model = hub.KerasLayer("https://tfhub.dev/google/universal-sentence-encoder-large/5", trainable=False)
   return model

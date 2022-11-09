@@ -1,13 +1,13 @@
 import streamlit as st
-import plost
-import pandas as pd
+import tensorflow_hub as hub
+import tensorflow
 
-datasets = {'Date':['2022-09-30','2022/09/30','2022/09/30'],'sys':[149,139,127],'dias':[109,97,91]}
-df = pd.DataFrame(datasets)
-df['Date']= pd.to_datetime(df['Date'])
+@st.cache
+def get_model():
+  model = hub.KerasLayer("https://tfhub.dev/google/universal-sentence-encoder-large/5", trainable=False)
+  return model
 
-plost.bar_chart(
-    data=df,
-    bar='Date',
-    value=['sys', 'dias'],
-    group=True)
+if __name__ == "__main__":
+  model = get_model()
+  text = st.text_area("Enter some text")
+  result = model(tf.convert_to_tensor(text))

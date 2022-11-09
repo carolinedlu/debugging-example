@@ -1,5 +1,5 @@
 import streamlit as st
-import tensorflow
+import tensorflow as tf
 import tensorflow_hub as hub
 
 @st.experimental_singleton

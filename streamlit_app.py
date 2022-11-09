@@ -8,6 +8,6 @@ df['Date']= pd.to_datetime(df['Date'])
 
 plost.bar_chart(
     data=df,
-    bar='date',
+    bar='Date',
     value=['sys', 'dias'],
     group=True)

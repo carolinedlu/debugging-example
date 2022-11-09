@@ -1,2 +1,10 @@
-plost
 streamlit
+pandas
+tensorflow
+tensorflow_hub
+# streamlit.components.v1
+# pandas
+# csv
+# boto3
+# numpy
+# PIL

@@ -1,6 +1,6 @@
 import streamlit as st
-import tensorflow_hub as hub
 import tensorflow
+import tensorflow_hub as hub
 
 @st.cache
 def get_model():
